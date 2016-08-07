@@ -18,8 +18,8 @@ defmodule PhoenixStripe.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {PhoenixStripe, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+     applications: [:phoenix, :phoenix_html, :comeonin, :cowboy, :logger, :gettext,
+                    :phoenix_ecto, :postgrex, :ueberauth, :ueberauth_identity]]
   end
 
   # Specifies which paths to compile per environment.
@@ -32,10 +32,15 @@ defmodule PhoenixStripe.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.1.4"},
      {:postgrex, ">= 0.0.0"},
+     {:corsica, "~> 0.4"},
+     {:ueberauth, "~> 0.2"},
+     {:ueberauth_identity, "~> 0.2"},
+     {:guardian, "~> 0.10"},
      {:phoenix_ecto, "~> 2.0"},
      {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
+     {:comeonin, "~> 2.3"},
      {:cowboy, "~> 1.0"}]
   end
 

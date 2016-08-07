@@ -35,5 +35,6 @@ defmodule PhoenixStripe.Endpoint do
     key: "_phoenix_stripe_key",
     signing_salt: "wvb+uthf"
 
+  plug Corsica, allow_headers: ~w(Accept Content-Type Authorization)
   plug PhoenixStripe.Router
 end
